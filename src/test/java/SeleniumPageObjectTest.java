@@ -1,14 +1,13 @@
-import org.openqa.selenium.By;
+import enums.IndexPageTextsEnum;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjects.IndexPage;
+
+import static enums.IndexPageTextsEnum.TEXT_1;
 
 public class SeleniumPageObjectTest {
 
@@ -32,9 +31,18 @@ public class SeleniumPageObjectTest {
     public void test1() {
 
         //1
-        driver.navigate().to("https://jdi-framework.github.io/tests/index.htm");
+        indexPage.open(driver);
 
         //2
         indexPage.login("epam", "1234");
+
+        //3
+        indexPage.checkPageTitle(driver);
+
+        //4
+        indexPage.checkTextsUnderImages(TEXT_1);
+
+        //5
+        indexPage.checkTextsUnderImages(IndexPageTextsEnum.values());
     }
 }

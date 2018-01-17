@@ -20,6 +20,12 @@
             <artifactId>selenium-java</artifactId>
             <version>3.8.1</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>4.10</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -32,7 +38,7 @@
 
                     <configuration>
                         <suiteXmlFiles>
-                            <suiteXmlFile>src\test\resources\testng.xml</suiteXmlFile>
+                            <suiteXmlFile>src\test\resources\testngSelenideParallel.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
