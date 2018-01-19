@@ -1,5 +1,6 @@
 import base.BaseSelenide;
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -13,7 +14,7 @@ public class SelenideTest extends BaseSelenide {
 
     @AfterMethod
     public void closeBrowser() {
-        close();
+        WebDriverRunner.closeWebDriver();
     }
 
     @Test
