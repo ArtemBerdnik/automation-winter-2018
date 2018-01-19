@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Selenide tests" verbose="1" thread-count="3" parallel="methods">
-    <test name="Selenide test"   >
+<suite name="Selenide tests" verbose="1" >
+    <test name="Selenide test" thread-count="3" parallel="methods" >
        <classes>
            <class name="SelenideTest"/>
        </classes>
