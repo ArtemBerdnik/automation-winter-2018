@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import enums.IndexPageTextsEnum;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import static com.codeborne.selenide.Condition.visible;
 import static org.testng.Assert.assertEquals;
@@ -22,10 +23,12 @@ public class IndexPage {
     @FindBy(css = ".form-horizontal [type='submit']")
     private SelenideElement submitButton;
 
+    @Step
     public void open(WebDriver driver) {
         driver.navigate().to("https://jdi-framework.github.io/tests/index.htm");
     }
 
+    @Step
     public void login(String name, String password) {
         loginFormButton.should(visible);
         loginFormButton.click();
@@ -35,14 +38,17 @@ public class IndexPage {
         submitButton.click();
     }
 
+    @Step
     public void checkPageTitle(WebDriver driver) {
         assertEquals(driver.getTitle(), "");
     }
 
+    @Step
     public void checkTextsUnderImages(IndexPageTextsEnum text) {
         assertEquals("", text.text);
     }
 
+    @Step
     public void checkTextsUnderImages(IndexPageTextsEnum[] texts) {
         assertEquals("", "");
     }
